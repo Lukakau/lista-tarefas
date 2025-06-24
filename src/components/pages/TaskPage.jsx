@@ -1,14 +1,18 @@
 import { useSearchParams } from "react-router";
 import { ChevronLeftIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function TaskPage() {
+    const navigate = useNavigate();
     const [searchParams] = useSearchParams();    
     const title = searchParams.get("title");
     const description = searchParams.get("description");
     return (
         <div className="w-screen h-screen bg-slate-500 p-6 flex flex-col items-center justify-start gap-5">
             <div className="w-[500px] flex items-center justify-between p-4 rounded-md">
-                <button className="w-10 flex items-center justify-center text-slate-100 ">
+                <button 
+                onClick = {() => navigate(-1)}
+                className="w-10 flex items-center justify-center text-slate-100 ">
                     <ChevronLeftIcon />
                 </button>
                 <h1 className="text-3xl text-slate-100 font-bold text-center flex-1">

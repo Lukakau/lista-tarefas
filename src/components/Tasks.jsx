@@ -12,7 +12,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTask }) {
         query.set("description", task.description);
         navigate(`/task?${query.toString()}`);
     }
-
+    
     return(
         <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
             {tasks.map((task) => (
