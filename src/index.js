@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TaskPage from './components/pages/TaskPage';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import TaskManager from './components/pages/TaskManager';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,16 +13,20 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route 
-        path="/" 
-        element={<Navigate to="/home" replace />} 
+          path="/" 
+          element={<Navigate to="/home" replace />} 
+        />
+        <Route
+          path="/home"
+          element={<App />}
         />
         <Route 
-        path="/home"
-        element={<App />} 
+          path="/gerenciadordetarefas"
+          element={<TaskManager />} 
         />
         <Route 
-        path="/task"
-        element={<TaskPage />}
+          path="/task"
+          element={<TaskPage />}
         />
       </Routes>
     </BrowserRouter>
